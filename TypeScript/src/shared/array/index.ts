@@ -9,3 +9,7 @@ export const chunk = <T>(arr: T[], chunkSize: number): T[][] => {
     return acc;
   }, []);
 };
+
+export const copy2d = <T>(arr: T[][]): T[][] => {
+  return arr.map((arr) => arr.slice());
+};
