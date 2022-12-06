@@ -1,3 +1,4 @@
+import { sum } from '../shared/array';
 import { openFileD } from '../shared/fs';
 
 interface Game {
@@ -37,7 +38,7 @@ const scoreGame = (game: Game): number => {
 
 const p1 = (games: Game[]) => {
   const total = games.map(scoreGame).reduce((a, b) => a + b, 0);
-  console.log(`Day 2, part 1: ${total}`);
+  console.log(`Day 2, Part 1: ${total}`);
 };
 
 const scoreGame2 = (game: Game): number => {
@@ -72,8 +73,8 @@ const scoreGame2 = (game: Game): number => {
 };
 
 const p2 = (games: Game[]) => {
-  const total = games.map(scoreGame2).reduce((a, b) => a + b, 0);
-  console.log(`Day 2, part 2: ${total}`);
+  const total = sum(games.map(scoreGame2));
+  console.log(`Day 2, Part 2: ${total}`);
 };
 
 export const run = () => {
